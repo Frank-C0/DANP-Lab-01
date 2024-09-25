@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct Login_ExampleApp: App {
+    
+    @State var isLoggedIn:Bool=false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //ContentView()
+            if isLoggedIn{
+                HomeView()
+            }else{
+                LoginView(isLoggedIn: $isLoggedIn)
+            }
         }
     }
 }
